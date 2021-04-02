@@ -5,17 +5,8 @@ import "./Result.css";
 export default function Result(props) {
   return (
     <div className="Result">
-      <div> what word do you want to look up?</div>
-      <p> {props.result}</p>
+      <h3>{props.result[0].word}</h3>
+      <div> {props.result[0].phonetics[0].text}</div>
     </div>
   );
-  //   else {
-  //     return (
-  //       <div>
-  //         <h3> you searched for:</h3>
-  //         <p> {props.results.word}</p>
-  //         <p> phonetics: {props.results.word} </p>
-  //       </div>
-  //     );
-  //   }
 }

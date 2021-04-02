@@ -17,8 +17,9 @@ function App() {
         <h1> Dictionary </h1>
 
         <Search updateResult={updateResult} />
-        <Result result={result} />
-        {/* created a result component, which has a props called 'result'. This props passes down 'whatever value' in App's state results  */}
+        {result !== null && <Result result={result} />}
+        {/* created a result component, which has a props called 'result'. 
+        This props passes down 'whatever value' in App's state result  */}
       </div>
     </div>
   );
