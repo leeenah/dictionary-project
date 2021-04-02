@@ -7,10 +7,8 @@ export default function Search() {
   const [results, setResults] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data);
-    console.log(response.data[0].word);
-    console.log(response.data[0].phonetics[0].text);
-    setResults(response.data[0].word);
+    // console.log(response.data);
+    setResults(response.data[0]);
   }
 
   // [{ word: response.data[0].word, phonetics: response.data[0] }];
@@ -29,12 +27,15 @@ export default function Search() {
 
   return (
     <div className="Search">
-      what word do you want to look up?
       <form onSubmit={search}>
-        <input type="search" onChange={handleSearch}></input>
+        <input
+          type="search"
+          placeholder="enter a word"
+          onChange={handleSearch}
+        ></input>
       </form>
       <div>
-        <Results results1={results} />
+        <Results results={results} />
       </div>
     </div>
   );
