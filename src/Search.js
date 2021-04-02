@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Results from "./Results";
 
-export default function Search() {
-  const [keyword, setKeyword] = useState(null);
-  const [results, setResults] = useState(null);
+export default function Search(props) {
+  const [query, setQuery] = useState(null);
 
   function handleResponse(response) {
-    // console.log(response.data);
-    setResults(response.data[0]);
+    props.updateResult(response.data);
   }
-
-  // [{ word: response.data[0].word, phonetics: response.data[0] }];
 
   function search(event) {
     event.preventDefault();
-    console.log(`searching the definition for ${keyword}`);
-    let api = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+    console.log(`searching the definition for ${query}`);
+    let api = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${query}`;
     axios.get(api).then(handleResponse);
   }
 
   function handleSearch(event) {
     event.preventDefault();
-    setKeyword(event.target.value);
+    setQuery(event.target.value);
   }
 
   return (
@@ -34,9 +29,6 @@ export default function Search() {
           onChange={handleSearch}
         ></input>
       </form>
-      <div>
-        <Results results={results} />
-      </div>
     </div>
   );
 }
