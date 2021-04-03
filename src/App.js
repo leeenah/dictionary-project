@@ -23,7 +23,11 @@ function App() {
       </div>
       <footer>
         coded by
-        <a href="https://github.com/leeenah/dictionary-project" target="_blank">
+        <a
+          href="https://github.com/leeenah/dictionary-project"
+          target="_blank"
+          rel="noreferrer"
+        >
           {" "}
           Lena Zhang
         </a>
