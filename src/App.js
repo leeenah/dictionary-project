@@ -21,6 +21,13 @@ function App() {
         {/* created a result component, which has a props called 'result'. 
         This props passes down 'whatever value' in App's state result  */}
       </div>
+      <footer>
+        coded by
+        <a href="https://github.com/leeenah/dictionary-project" target="_blank">
+          {" "}
+          Lena Zhang
+        </a>
+      </footer>
     </div>
   );
 }
