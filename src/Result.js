@@ -8,6 +8,7 @@ export default function Result(props) {
       <p>{meaning.partOfSpeech}</p>
       <p> {meaning.definitions[0].definition}</p>
       <p>Example: {meaning.definitions[0].example}</p>
+      <p> {meaning.definitions[0].synonyms}</p>
     </div>
   ));
 
