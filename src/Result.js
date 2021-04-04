@@ -15,7 +15,18 @@ export default function Result(props) {
   return (
     <div className="Result">
       <h3>{props.result[0].word}</h3>
-      <div> {props.result[0].phonetics[0].text}</div>
+      <div>
+        <span>
+          <a
+            href={props.result[0].phonetics[0].audio}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Listen
+          </a>
+        </span>
+        {props.result[0].phonetics[0].text}
+      </div>
       <div>{listItems}</div>
     </div>
   );
