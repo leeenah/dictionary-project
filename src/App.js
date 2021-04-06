@@ -7,7 +7,6 @@ function App() {
   const [result, setResult] = useState(null);
 
   function updateResult(result) {
-    console.log(result);
     setResult(result);
   }
 

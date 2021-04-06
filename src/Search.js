@@ -10,7 +10,6 @@ export default function Search(props) {
 
   function search(event) {
     event.preventDefault();
-    console.log(`searching the definition for ${query}`);
     let api = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${query}`;
     axios.get(api).then(handleResponse);
   }
