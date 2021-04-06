@@ -6,12 +6,15 @@ export default function Result(props) {
   // Reference: https://reactjs.org/docs/lists-and-keys.html
   // See Rendering multiple components
   const listItems = props.result[0].meanings.map((meaning, index) => (
-    <div style={{ backgroundColor: "lightgrey" }} key={index}>
-      <p>{meaning.partOfSpeech}</p>
+    <div key={index}>
+      <p>
+        <strong>{meaning.partOfSpeech}</strong>
+      </p>
       <p> {meaning.definitions[0].definition}</p>
-      <p>Example: {meaning.definitions[0].example}</p>
-      {/*TODO add new const for synonyms */}
-      <p> {meaning.definitions[0].synonyms}</p>
+      <p>
+        <em>Example:</em> {meaning.definitions[0].example}
+      </p>
+      <li> {meaning.definitions[0].synonyms}</li>
     </div>
   ));
 
