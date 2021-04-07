@@ -3,18 +3,32 @@ import React from "react";
 import "./Result.css";
 
 export default function Result(props) {
-  // Reference: https://reactjs.org/docs/lists-and-keys.html
-  // See Rendering multiple components
-  const listItems = props.result[0].meanings.map((meaning, index) => (
-    <div key={index}>
-      <p>
-        <strong>{meaning.partOfSpeech}</strong>
-      </p>
-      <p> {meaning.definitions[0].definition}</p>
-      <p>
-        <em>Example:</em> {meaning.definitions[0].example}
-      </p>
-      <li> {meaning.definitions[0].synonyms}</li>
+  //Following the same format from the API response:
+  const meanings = props.result.map((result, index) => (
+    <div key={index} style={{ border: "1px solid rgba(255, 0, 0, 1)" }}>
+      <p>Result: index-{index}</p>
+      <p>Phonetics: {result.phonetics[0].text}</p>
+      <p>Meanings: {result.meanings.length}</p>
+
+      {result.meanings.map((meaning) => (
+        <div>
+          <div>Definitions: {meaning.definitions.length}</div>
+          <div> Part of Speech: {meaning.partOfSpeech}</div>
+          {meaning.definitions.map((definition) => (
+            <div>
+              {definition.definition != null && (
+                <div>Definition: {definition.definition}</div>
+              )}
+              {definition.example != null && (
+                <div>Example: {definition.example}</div>
+              )}
+              {definition.synonyms != null && (
+                <div>Synonyms: {definition.synonyms}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   ));
 
@@ -32,7 +46,7 @@ export default function Result(props) {
 
         {props.result[0].phonetics[0].text}
       </div>
-      <div>{listItems}</div>
+      <div>{meanings}</div>
     </div>
   );
 }

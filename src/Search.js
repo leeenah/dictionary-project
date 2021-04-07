@@ -5,7 +5,6 @@ export default function Search(props) {
   const [query, setQuery] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data);
     props.updateResult(response.data);
   }
 
