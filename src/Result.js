@@ -6,24 +6,23 @@ export default function Result(props) {
   //Following the same format from the API response:
   const meanings = props.result.map((result, index) => (
     <div key={index} style={{ border: "1px solid rgba(255, 0, 0, 1)" }}>
-      <p>Result: index-{index}</p>
-      <p>Phonetics: {result.phonetics[0].text}</p>
-      <p>Meanings: {result.meanings.length}</p>
-
       {result.meanings.map((meaning) => (
         <div>
-          <div>Definitions: {meaning.definitions.length}</div>
           <div> Part of Speech: {meaning.partOfSpeech}</div>
+          <br />
           {meaning.definitions.map((definition) => (
             <div>
               {definition.definition != null && (
                 <div>Definition: {definition.definition}</div>
               )}
+              <br />
+
               {definition.example != null && (
                 <div>Example: {definition.example}</div>
               )}
+              <br />
               {definition.synonyms != null && (
-                <div>Synonyms: {definition.synonyms}</div>
+                <div>similar: {definition.synonyms}</div>
               )}
             </div>
           ))}
