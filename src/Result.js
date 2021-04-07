@@ -8,21 +8,34 @@ export default function Result(props) {
     <div key={index} style={{ border: "1px solid rgba(255, 0, 0, 1)" }}>
       {result.meanings.map((meaning) => (
         <div>
-          <div> Part of Speech: {meaning.partOfSpeech}</div>
+          <div>
+            <br />
+            <strong>{meaning.partOfSpeech}</strong>
+          </div>
           <br />
           {meaning.definitions.map((definition) => (
             <div>
               {definition.definition != null && (
-                <div>Definition: {definition.definition}</div>
+                <div>
+                  <strong>Definition:</strong> {definition.definition}
+                </div>
               )}
               <br />
 
               {definition.example != null && (
-                <div>Example: {definition.example}</div>
+                <div>
+                  <strong>Example:</strong> {definition.example}
+                </div>
               )}
               <br />
               {definition.synonyms != null && (
-                <div>similar: {definition.synonyms}</div>
+                /** 
+                 Slice: https://stackoverflow.com/a/14236643 
+                 Join: https://stackoverflow.com/a/5080184
+                 */
+                <div>
+                  <em>similar:</em> {definition.synonyms.slice(0, 3).join(", ")}
+                </div>
               )}
             </div>
           ))}
