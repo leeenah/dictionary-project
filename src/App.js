@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1> Dictionary </h1>
+        <h1> What word do you want to look up? </h1>
 
         <Search updateResult={updateResult} />
         {result !== null && <Result result={result} />}
-        {/* created a result component, which has a props called 'result'. 
+        {/* created a Result component, which has a props called 'result'. 
         This props passes down 'whatever value' in App's state result  */}
       </div>
       <footer>

@@ -1,0 +1,16 @@
+.Search {
+  text-align: center;
+  color: #89a894;
+}
+input {
+  color: #89a894;
+  border-width: 1px;
+  border-radius: 4px;
+  width: 300px;
+}
+
+span {
+  font-size: 10px;
+  position: relative;
+  right: 60px;
+}

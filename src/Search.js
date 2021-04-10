@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import "./Search.css";
+
 export default function Search(props) {
   const [query, setQuery] = useState(null);
 
@@ -24,9 +26,12 @@ export default function Search(props) {
       <form onSubmit={search}>
         <input
           type="search"
-          placeholder="enter a word"
+          placeholder="Search for a word"
           onChange={handleSearch}
         ></input>
+        <div>
+          <span>Get definitions, examples, synonyms</span>
+        </div>
       </form>
     </div>
   );

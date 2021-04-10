@@ -1,8 +1,14 @@
-.App {
+body {
+  background-color: #faf0f0;
+  color: #3c533c;
+}
+footer {
+  font-size: 10px;
+  padding-top: 10px;
   text-align: center;
 }
-
-footer {
-  font-size: 12px;
-  padding-top: 10px;
+h1 {
+  text-align: center;
+  padding: 20px 0 10px;
+  font-family: "DM Serif Text", serif;
 }
