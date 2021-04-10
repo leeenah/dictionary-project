@@ -1,3 +1,8 @@
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 body {
   background-color: #faf0f0;
   color: #3c533c;

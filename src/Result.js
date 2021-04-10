@@ -12,31 +12,28 @@ export default function Result(props) {
             <strong>{meaning.partOfSpeech}</strong>
           </div>
 
-          {meaning.definitions.map((definition) => (
-            <section>
-              <div className="definition">
-                {definition.definition != null && (
-                  <div>
-                    <strong>{definition.definition}</strong>
-                  </div>
-                )}
-                {definition.example != null && (
-                  <div className="example"> "{definition.example}"</div>
-                )}
+          {meaning.definitions.map((definition, index) => (
+            <div className="definition" key={index}>
+              {definition.definition != null && (
+                <div>
+                  <strong>{definition.definition}</strong>
+                </div>
+              )}
+              {definition.example != null && (
+                <div className="example"> "{definition.example}"</div>
+              )}
 
-                {definition.synonyms != null && (
-                  /** 
+              {definition.synonyms != null && (
+                /** 
                  Slice: https://stackoverflow.com/a/14236643 
                  Join: https://stackoverflow.com/a/5080184
                  */
-                  <div className="synonyms">
-                    {definition.synonyms.slice(0, 3).join(", ")}
-                  </div>
-                )}
-
-                <br />
-              </div>
-            </section>
+                <div className="synonyms">
+                  {definition.synonyms.slice(0, 3).join(", ")}
+                </div>
+              )}
+              <br />
+            </div>
           ))}
         </div>
       ))}

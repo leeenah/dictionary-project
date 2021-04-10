@@ -8,6 +8,8 @@
   border-radius: 10px;
   color: #89a894;
   padding-left: 10px;
+  padding-right: 20px;
+  margin-bottom: 10px;
 }
 
 .partOfSpeech {
@@ -46,4 +48,5 @@ h3 {
   font-family: "DM Serif Text", serif;
   color: #3c533c;
   font-size: 50px;
+  padding-top: 20px;
 }
